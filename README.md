@@ -1,22 +1,13 @@
-# MKRL
-GNUCOBOL Record Layouts from File Descriptors
-
-Developed and tested with GNUCOBOL 3.3.
-
-usage: mkrl File-Specification (full path and filename)
-
-mkrl
+MKRL
 
 Developed and tested with GNUCOBOL 3.3.
 
 usage: mkrl File-Specification (full path and filename)
 
 This program creates record layouts from COBOL data structures,
-which may be File Descriptors. Currently, it only works with
-flat data structures, although multi-dimensional tables may
-be added in the future.
+which may be File Descriptors.
 
-Assume you want a record layout from an FD stored in
+Example: Assume you want a record layout from an FD stored in
 ../CPY/SYSDATES.FD. Change to the MKRL directory and type:
 
     mkrl.sh ../CPY/SYSDATES.FD
@@ -48,4 +39,12 @@ layout, including the length of each data item.
 
 Within the execution unit, GNUCOBOL supports "length Data-Name"
 which gives the length of data items. This program parses file
-"README" 53L, 1908B                                           1,1           Top
+descriptors, and submits data-names to the GNUCOBOL execution
+unit, producing a similar result with some caveats.
+
+See ISSUE.txt                                             
+~                                                                               
+~                                                                               
+~                                                                               
+"README" 45L, 1699B                                           1,1           All
+
