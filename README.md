@@ -1,50 +1,37 @@
-MKRL
+# MKRL
 
-Developed and tested with GNUCOBOL 3.3.
+**MKRL** creates record layouts containing the position, format, and length of each named data item from COBOL data structures, such as File Descriptors.
 
-usage: mkrl File-Specification (full path and filename)
+Developed and tested with **GNUCOBOL 3.3**.
 
-This program creates record layouts from COBOL data structures,
-which may be File Descriptors.
+usage: **mkrl.sh** [-nr] File-Specification (full path and filename)
 
-Example: Assume you want a record layout from an FD stored in
-../CPY/SYSDATES.FD. Change to the MKRL directory and type:
+## Example:
 
-    mkrl.sh ../CPY/SYSDATES.FD
+Assume you want a record layout from a data structure. In this example, the first line of our data structure is a level 01 group name, **Sysdates-File-Record**.
 
-When the script finishes, hopefully, you will find the record
-layout in SYSDATES.RL.
+>       01  Sysdates-File-Record.
 
-1. The specified File Descriptor is copied to TMP.FD in the current
-   directory, replacing the FD Filename with "TMP-File".
+* Save the data structure in a file, with an extension, **.DS**, in the **MKRL** directory. In this case, we will name our input file: **SYSDATES.DS**. Only lines beginning with leading spaces followed by a level-number will be processed. 
 
-2. FD-PARSER parses TMP.FD, formatting each line as COBOL code
-   to comprise FD-ANALYZER.CBL, which is incorporated into RL.CBL.
-   RL.CBL is then compiled so that GNUCOBOL "length" can be used
-   to determine the compiled length of each field.
+* Change to the MKRL directory and type:
 
-3. RL creates the record layout in TMP.RL, and the script, mkrl.sh.
-   moves it to SYSDATES.RL in the MKRL directory.
+     > **./mkrl.sh ../CPY/SYSDATES.DS**
 
--------------------------------------------------------------------
-A COBOL file descriptor is no substitute for a proper record
-layout. Many people, who have never programmed in COBOL, are
-unfamiliar with data types, such as packed-decimal. A proper record
-layout gives the starting position of each field and field and
-record length.
+* View the record layout in **SYSDATES.RL**
 
-The MicroFocus compiler has an option to print a listing which
-produces everything you need to easily format a proper record
-layout, including the length of each data item.
+## How it works
 
-Within the execution unit, GNUCOBOL supports "length Data-Name"
-which gives the length of data items. This program parses file
-descriptors, and submits data-names to the GNUCOBOL execution
-unit, producing a similar result with some caveats.
+1. The specified data structure, **SYSDATES.DS** is copied to **TMP.DS** in the **MKRL** directory, replacing the 01 level structure name, in this case **Sysdates-File-Record** with **Tmp-File**.
 
-See ISSUE.txt                                             
-~                                                                               
-~                                                                               
-~                                                                               
-"README" 45L, 1699B                                           1,1           All
+2. **DS-PP.CBL** preprocesses **TMP.DS**, writing its output in **DS.DS**.
 
+3. **DS-PARSER** parses **DS.DS**, transforming each data item into COBOL code snippets, which it writes to **DS-ANALYZER.CBL**.
+
+4. **DS-ANALYZER.CBL** is incorporated into **RL.CBL** via a copy statement during compliation.
+
+5. **RL.CBL** uses the **GNUCobol runtime library** to analyze the data structure, producing data item lengths, for the record layout, which it writes to a file with a name derived from the input file name specified in the **mkrl.sh** command. In this case, the **SYSDATES.DS** extension is replaced with **.RL** giving **SYSDATES.RL**.
+
+eMail [Bill Waller](billxwaller@gmail.com)
+README.md                                                               35,1           All
+                                                                                  
