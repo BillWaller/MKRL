@@ -1,9 +1,9 @@
 Data Name                     Format         Type           N-Len  Pos  F-Len
 ----------------------------- -------------- -------------- ----- ----- -----
-Bd-File-Record                                                182     1
-Bd-Custid-Key                                                  22     1
+Bd-File-Record                                                182     1      
+Bd-Custid-Key                                                         1      
 Bd-Custid                     x(6)                                    1     6
-Bd-Key                                                         16     7
+Bd-Key                                                                7      
 Bd-Ordno                      zzzzz9                                  7     6
 Bd-Bill-Custid                x(6)                                   13     6
 Bd-Ref                        9999                                   19     4
@@ -23,4 +23,4 @@ Bd-Glkey                      9(2)                                  172     2
 Bd-Fixed-Amount               s9(7)v9(2)     COMP-3                 174     5
 Bd-Percent                    s9(3)v9(3)     COMP-3                 179     4
                                                                         -----
-                                        Total                             182
+                                        Total               182

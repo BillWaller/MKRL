@@ -176,17 +176,17 @@ fn calculate_picture_length(picture: &str) -> Result<usize> {
         return Ok(1);
     }
     
-    // Handle 9(n) format
-    if let Some(captures) = regex::Regex::new(r"9\((\d+)\)")?.captures(picture) {
-        let count: usize = captures.get(1).unwrap().as_str().parse()?;
-        return Ok(count);
-    }
-    
-    // Handle s9(n)v9(n) format (signed decimal with implied decimal point)
+    // Handle s9(n)v9(n) format first (signed decimal with implied decimal point)
     if let Some(captures) = regex::Regex::new(r"s?9\((\d+)\)(?:v9\((\d+)\))?")?.captures(picture) {
         let int_digits: usize = captures.get(1).unwrap().as_str().parse()?;
         let dec_digits: usize = captures.get(2).map(|m| m.as_str().parse().unwrap_or(0)).unwrap_or(0);
         return Ok(int_digits + dec_digits);
+    }
+    
+    // Handle 9(n) format
+    if let Some(captures) = regex::Regex::new(r"^9\((\d+)\)$")?.captures(picture) {
+        let count: usize = captures.get(1).unwrap().as_str().parse()?;
+        return Ok(count);
     }
     
     // Handle x(n) format (character)
