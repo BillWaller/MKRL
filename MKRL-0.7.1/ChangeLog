@@ -1,0 +1,15 @@
+MKRL
+Bill Waller
+billxwaller@gmail.com
+2025-02-16T20:14:01-06:00 Data type wasn't being initialized, causing fields without data types to inherrit data type from the previous line.
+2025-02-17T10:22:18-06:00 Removed copy statements, which referred to code outside of the MKRL directory.
+2025-02-20T21:06:15-06:00 Added FD-PP.CBL, which inserts a name into unnamed fields.
+2025-02-20T23:51:40-06:00 Corrected an issue with missing token identifier
+in RL.CBL
+2025-02-22T17:06:37-06:00 Workaround to derive length from dimensional data by
+applying OCCURS clauses to scalar fields.
+2025-02-24T18:05:47-06:00 Put error messages in rmmf.sh for variable length
+records and redefines
+2025-02-25T11:47:01-06:00 Removed references to FD (File Descriptor) and
+replaced them with DS (Data Structure) since MKRL doesn't distinguish between
+the two.

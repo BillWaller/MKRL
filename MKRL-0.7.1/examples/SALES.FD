@@ -1,0 +1,9 @@
+       fd  Sales-File.
+       01  Sales-File-Record.
+           02  Sales-File-Key.
+               03  S-Product-ID  pic x(6).
+               03  S-Year        pic 9(4).
+           02  S-Region occurs 2 times.
+               03  S-Month occurs 12 times.
+                   04  S-Amount  pic s9(9)v9(2) COMP-3.
+           02  S-Product-Desc    pic x(30). 

@@ -1,0 +1,30 @@
+      *
+      * TINMAST
+      * Transaction Input
+      *
+       fd  Tinmast-File.
+       01  Tinmast-File-Record.
+           02  Ti-Custid           pic x(6).
+           02  Ti-Transno          pic 9(9).
+           02  Ti-Date             pic 9(6).
+           02  Ti-Ordno            pic s9(7) COMP-3.
+           02  Ti-Sp               pic s9(3) COMP-3.
+           02  Ti-Desc             pic x(20).
+           02  Ti-Trnscode         pic 9.
+           02  Ti-Postcode         pic 9.
+           02  Ti-Intcode          pic 9.
+           02  Ti-Spcomm           pic s99v9(3) COMP-3.
+           02  Ti-Noanns           pic s9(5) COMP-3.
+           02  Ti-Annlen           pic s9(5) COMP-3.
+           02  Ti-Nopgms           pic s9(5) COMP-3.
+           02  Ti-Pgmlen           pic s9(5) COMP-3.
+           02  Ti-Urate            pic s9(7)v99 COMP-3.
+           02  Ti-Pkgprice         pic s9(7)v99 COMP-3.
+           02  Ti-Glkey            pic 99.
+           02  Ti-Dramt            pic s9(9)v99 COMP-3.
+           02  Ti-Cramt            pic s9(9)v99 COMP-3.
+           02  Ti-Orgamt           pic s9(9)v99 COMP-3.
+           02  Ti-Bsta             pic 9.
+           02  Ti-Type             pic 9.
+           02  Ti-Invno            pic 9(6).
+           02  Ti-Prdcode          pic 9(3).

@@ -1,0 +1,10 @@
+      *
+      * CARLOCK
+      * A/R End of Month Lock
+      *
+       fd  Carlock-File
+           record is varying in size from 0 to 255 characters
+           depending on Carlock-Rec-Len.
+       01  Carlock-File-Record.
+           02  pic x occurs 0 to 255 times
+               depending on Carlock-Rec-Len.

@@ -1,0 +1,12 @@
+      *
+      * DTOM
+      * Order Master
+      *
+       fd  Dtom-File.
+       01  Dtom-File-Record.
+           02  Om-Custid-Key.
+               03  Om-Custid       pic x(6).
+               03  Om-Key.
+                   04  Om-Ordno    pic zzzzz9.
+                   04  Om-Detno    pic 99.
+           02                      pic x(180).

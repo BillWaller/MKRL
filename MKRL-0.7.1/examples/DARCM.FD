@@ -1,0 +1,60 @@
+      *
+      * DARCM
+      * Customer
+      *
+       fd  Darcm-File.
+       01  Darcm-File-Record.
+           02  Cm-Custid            pic x(6).
+           02  Cm-Cust-Name         pic x(36).
+           02  Cm-Addr1             pic x(34).
+           02  Cm-Addr2             pic x(34).
+           02  Cm-City              pic x(18).
+           02  Cm-State             pic x(2).
+           02  Cm-Zip               pic x(10).
+           02  Cm-Tel               pic x(18).
+           02  Cm-Contact           pic x(22).
+           02  Cm-Prdcode           pic s9(3) COMP-3.
+           02  Cm-Sp                pic 99.
+           02  Cm-Spcomm            pic s99v9(3) COMP-3.
+           02  Cm-Ag-Id             pic x(6).
+           02  Cm-Agycomm           pic s99v9(3) COMP-3.
+           02  Cm-Agygl             pic 99.
+           02  Cm-Repno             pic s9(3) COMP-3.
+           02  Cm-Repcomm           pic s99v9(3) COMP-3.
+           02  Cm-Repgl             pic 99.
+           02  Cm-Cycle             pic 9.
+           02  Cm-Type              pic 9.
+           02  Cm-Intcode           pic 9.
+           02  Cm-Bsta              pic 9.
+           02  Cm-Class             pic 99.
+           02  Cm-Affd              pic 9.
+           02  Cm-Annv              pic s9(9) COMP-3.
+           02  Cm-Ladate            pic s9(7) COMP-3.
+           02  Cm-Actin             pic 9.
+           02  Cm-S1-Last-Stmt-Date  pic s9(7) COMP-3.
+           02  Cm-S1-Last-Pmt-Date   pic s9(7) COMP-3.
+           02  Cm-S1-Last-Pmt-Amount pic s9(9)v99 COMP-3.
+           02  Cm-S1-Billed-Ytd      pic s9(9)v99 COMP-3.
+           02  Cm-S1-Interest-Due    pic s9(9)v99 COMP-3.
+           02  Cm-S1-Balance-Forward pic s9(9)v99 COMP-3.
+           02  Cm-S1-Current-Balance pic s9(9)v99 COMP-3.
+           02  Cm-S1-First-Link      pic s9(9) COMP-3.
+           02  Cm-S1-Last-Link       pic s9(9) COMP-3.
+           02  Cm-S1-History-Link    pic s9(9) COMP-3.
+           02  Cm-S2-Last-Stmt-Date  pic s9(7) COMP-3.
+           02  Cm-S2-Last-Pmt-Date   pic s9(7) COMP-3.
+           02  Cm-S2-Last-Pmt-Amount pic s9(9)v99 COMP-3.
+           02  Cm-S2-Billed-Ytd      pic s9(9)v99 COMP-3.
+           02  Cm-S2-Interest-Due    pic s9(9)v99 COMP-3.
+           02  Cm-S2-Balance-Forward pic s9(9)v99 COMP-3.
+           02  Cm-S2-Current-Balance pic s9(9)v99 COMP-3.
+           02  Cm-S2-First-Link      pic s9(9) COMP-3.
+           02  Cm-S2-Last-Link       pic s9(9) COMP-3.
+           02  Cm-S2-History-Link    pic s9(9) COMP-3.
+           02  Cm-Max-Link          pic s9(9) COMP-3.
+           02  Cm-Credit-Limit      pic s9(9)v99.
+           02  Cm-Update-Code       pic 9.
+           02  Cm-Sales-Tax-State   pic 99 COMP-3.
+           02  Cm-Bfrom             pic 9.
+           02  Cm-Agyno             pic s9(3) COMP-3.
+           02  Cm-Comment           pic x(50).

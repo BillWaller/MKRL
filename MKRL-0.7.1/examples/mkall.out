@@ -1,0 +1,24 @@
+../CPY/CARLOCK.FD
+ERROR: variable length files not implemented
+../CPY/CARLOCK.FD is variable length
+mv: cannot stat 'DS-ANALYZER.CBL': No such file or directory
+../CPY/BD.FD
+cobcd -g -O0 -debug -std=rm -Wall -fsource-location -ftraceall -x RL.CBL
+../CPY/DARCM.FD
+cobcd -g -O0 -debug -std=rm -Wall -fsource-location -ftraceall -x RL.CBL
+../CPY/DARSP.FD
+cobcd -g -O0 -debug -std=rm -Wall -fsource-location -ftraceall -x RL.CBL
+../CPY/DINC.FD
+cobcd -g -O0 -debug -std=rm -Wall -fsource-location -ftraceall -x RL.CBL
+../CPY/DTOM.FD
+cobcd -g -O0 -debug -std=rm -Wall -fsource-location -ftraceall -x RL.CBL
+../CPY/DTOD.CBL
+cobcd -g -O0 -debug -std=rm -Wall -fsource-location -ftraceall -x RL.CBL
+../CPY/DTOH.CBL
+cobcd -g -O0 -debug -std=rm -Wall -fsource-location -ftraceall -x RL.CBL
+../CPY/SALES.FD
+cobcd -g -O0 -debug -std=rm -Wall -fsource-location -ftraceall -x RL.CBL
+../CPY/SYSDATES.FD
+cobcd -g -O0 -debug -std=rm -Wall -fsource-location -ftraceall -x RL.CBL
+../CPY/TINMAST.FD
+cobcd -g -O0 -debug -std=rm -Wall -fsource-location -ftraceall -x RL.CBL

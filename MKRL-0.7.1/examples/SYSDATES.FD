@@ -1,0 +1,12 @@
+      *copy "../CPY/SYSDATES.FD".
+       fd  Sysdates-File.
+       01  Sysdates-File-Record.
+           02  sd-Cstart-Yyyymmdd   pic 9(8) COMP-3.
+           02  sd-Cstart            pic 9(8) COMP-3.
+           02  sd-Cstart-wday       pic 9.
+           02  sd-Cend-Yyyymmdd     pic 9(8) COMP-3.
+           02  sd-Cend              pic 9(8) COMP-3.
+           02  sd-Sbstart-Yyyymmdd  pic 9(8) COMP-3.
+           02  sd-Sbstart           pic 9(8) COMP-3.
+           02  sd-Sbend-Yyyymmdd    pic 9(8) COMP-3.
+           02  sd-Sbend             pic 9(8) COMP-3.
