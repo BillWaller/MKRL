@@ -1,0 +1,8 @@
+      *
+      * DARSP
+      * Sales Person
+      *
+       fd  Darsp-File.
+       01  Darsp-File-Record.
+           02  Sp-Name-Rows occurs 99 times.
+               03  Sp-Name pic x(30).

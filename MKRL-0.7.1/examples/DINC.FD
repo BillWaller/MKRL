@@ -1,0 +1,11 @@
+      *
+      * DINC
+      * Daily Income
+      *
+       fd  Dinc-File.
+       01  Dinc-File-Record.
+           02  Dinc-Key.
+               03  Dinc-Date pic zzzzz9.
+           02  Dinc-Bsta occurs 2 times.
+               03  Dinc-Class occurs 12 times.
+                   04  Dinc-Amount pic s9(9)v9(2) COMP-3.

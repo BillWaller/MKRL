@@ -1,0 +1,6 @@
+Data Name                     Format         Type           N-Len  Pos  F-Len
+----------------------------- -------------- -------------- ----- ----- -----
+Sysdates-File-Record                                            1     1     1
+sd-Cstart-wday                9                                       1     1
+                                                                        -----
+                                        Total                 1

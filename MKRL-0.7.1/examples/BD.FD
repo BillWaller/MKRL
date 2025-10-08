@@ -1,0 +1,27 @@
+      *
+      * BD
+      * Billing Directives
+      *
+       fd  Bd-File.
+       01  Bd-File-Record.
+           02  Bd-Custid-Key.
+               03  Bd-Custid          pic x(6).
+               03  Bd-Key.
+                   04  Bd-Ordno       pic zzzzz9.
+                   04  Bd-Bill-Custid pic x(6).
+                   04  Bd-Ref         pic 9999.
+           02  Bd-Ag-Id               pic x(6).
+           02  Bd-Type                pic x.
+           02  Bd-Cust-Name           pic x(36).
+           02  Bd-Addr1               pic x(36).
+           02  Bd-Addr2               pic x(36).
+           02  Bd-City                pic x(18).
+           02  Bd-State               pic x(2).
+           02  Bd-Zip                 pic x(10).
+           02  Bd-Confirmation        pic x.
+           02  Bd-Affidavit           pic x.
+           02  Bd-Statement           pic x.
+           02  Bd-Bsta                pic 9.
+           02  Bd-Glkey               pic 9(2).
+           02  Bd-Fixed-Amount        pic s9(7)v9(2) COMP-3.
+           02  Bd-Percent             pic s9(3)v9(3) COMP-3.

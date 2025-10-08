@@ -1,0 +1,71 @@
+MKRL
+Bill Waller
+billxwaller@gmail.com
+------------------------------------------------------------------------------
+2025-02-21T11:54:48-06:00 Bill Waller
+ISSUE #1: GNUCOBOL runtime "length" can't be used for dimensional groups.
+
+For example, the following data structure describes a 2 x 12 table.
+GNUCOBOL assigns a length of 72 to Dinc-Bsta, 6 to Dinc-Class, and 6
+to Dinc-Amount. 
+
+       fd  Tmp-File.
+       01  Dinc-File-Record.
+           02  Dinc-Key.
+               03  Dinc-Date pic zzzzz9.
+           02  Dinc-Bsta occurs 2 times.
+               03  Dinc-Class occurs 12 times.
+                   04  Dinc-Amount pic s9(9)v9(2) COMP-3.
+------------------------------------------------------------------------------
+GNUCOBOL returned 72 as the length of Bsta, and 6 each for Class, and
+Amount. Using this result, both the record position indicator and the sum
+of field lengths (labeled Total) is incorrect.
+
+Perhaps the confusion arose from trying to assign a field length to Bsta
+and Class, which, as dimensions of the same group, are incompatable with
+field length attributes.
+
+Record layout 1:
+
+Data Name                     Format         Type           N-Len  Pos  F-Len
+----------------------------- -------------- -------------- ----- ----- -----
+Dinc-File-Record                                              150     1
+Dinc-Key                                                        6     1
+Dinc-Date                     zzzzz9                                  1     6
+Dinc-Bsta                     OCCURS(2)                               7    72
+Dinc-Class                    OCCURS(12)                             79     6
+Dinc-Amount                   s9(9)v9(2)     COMP-3                  85     6
+                                                                        -----
+                                                       Total               90
+------------------------------------------------------------------------------
+SOLUTION to ISSUE #1:
+
+MKRL gives Bsta and Class no length, and instead, assigns a length
+of 2 * 12 * 6 = 144 to Amount.
+
+Record layout 2:
+
+Data Name                     Format         Type           N-Len  Pos  F-Len
+----------------------------- -------------- -------------- ----- ----- -----
+Dinc-File-Record                                              150     1
+Dinc-Key                                                        6     1     
+Dinc-Date                     zzzzz9                                  1     6
+Dinc-Bsta                     OCCURS(2)                               7      
+Dinc-Class                    OCCURS(12)                              7      
+Dinc-Amount                   s9(9)v9(2)     COMP-3             6     7   144
+                                                                        -----
+                                                       Total              150
+------------------------------------------------------------------------------
+2025-02-24T16:47:39-06:00 Bill Waller
+ISSUE #2: Variable length records with multi-line descriptions are not
+implemented. They would be more complicated to parse and analyze, and the
+format that would give a useful rendition of field positions and lengths
+is not apparent. I don't know if there is sufficient demand to justify the
+effort required.
+------------------------------------------------------------------------------
+2025-02-24T16:47:39-06:00 Bill Waller
+ISSUE #3: Redefines are not implemented for the same reasons as Issue #2.
+------------------------------------------------------------------------------
+2025-02-25T11:38:09-06:00
+Replaced references to FD (File Descriptor) with DS (Data Structure) since
+MKRL does not distinguish between them.
